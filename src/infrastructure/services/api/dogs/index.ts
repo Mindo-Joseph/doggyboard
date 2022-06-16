@@ -1,48 +1,22 @@
-import axios from 'axios';
+import axios from "axios";
+import { DogsResponse, ImagesResponse } from "../../../../interfaces";
 
-type Breed = {
-    breed: {};
-}
+const dogAPI = {
+  /**
+   * Get Dogs
+   * @returns List of all breeds
+   */
+  getDogs: function () {
+    return axios.get<DogsResponse>("https://dog.ceo/api/breeds/list/all");
+  },
+  /**
+   * Get Images
+   * @param query dog breed
+   * @returns Eight random dog images by breed
+   */
+  getImages: function (query: string) {
+    return axios.get<ImagesResponse>(`https://dog.ceo/api/breed/${query}/images/random/8`);
+  },
+};
 
-type getBreedsResponse = {
-    data: Breed;
-}
-async function getAllBreeds() {
-    try {
-        const { data } = await axios.get<getBreedsResponse>('https://dog.ceo/api/breeds/list/all', {
-            headers: {
-                Accept: 'application/json',
-            },
-        });
-        return data;
-    } catch (error) {
-        if (axios.isAxiosError(error)) {
-
-            return error.message;
-        } else {
-
-            return 'An unexpected error occurred';
-        }
-
-    }
-}
-
-export async function getBreedImages(breed: string) {
-    try {
-        const { data } = await axios.get<getBreedsResponse>(`https://dog.ceo/api/breed/${breed}/images/random`, {
-            headers: {
-                Accept: 'application/json',
-            },
-        });
-        return data;
-    } catch (error) {
-        if (axios.isAxiosError(error)) {
-
-            return error.message;
-        } else {
-            return 'An unexpected error occurred';
-        }
-
-    }
-}
-export default getAllBreeds;
+export default dogAPI;
