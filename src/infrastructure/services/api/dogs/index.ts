@@ -1,7 +1,7 @@
 import axios from "axios";
 import { DogsResponse, ImagesResponse } from "../../../../interfaces";
 
-const dogAPI = {
+const API = {
   /**
    * Get Dogs
    * @returns List of all breeds
@@ -19,4 +19,4 @@ const dogAPI = {
   },
 };
 
-export default dogAPI;
+export default API;
