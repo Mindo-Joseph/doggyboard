@@ -14,27 +14,32 @@ type args<T> = {
   initialStatus?: Status;
 };
 
+/**
+ * It takes an apiCall function and an initialStatus string, and returns an object with an error,
+ * status, data, and setStatus function
+ * @param  - apiCall - the function that will be called to fetch the data.
+ */
 export function useQuery<T>({
-  apiCall,
-  initialStatus = "ready",
+    apiCall,
+    initialStatus = "ready",
 }: args<T>): queryResponse<T> {
-  const [error, setError] = useState<AxiosError | undefined>();
-  const [status, setStatus] = useState<Status>(initialStatus);
-  const [data, setData] = useState<T | undefined>();
-  const fetcher = useCallback(apiCall, [apiCall]);
+    const [error, setError] = useState<AxiosError | undefined>();
+    const [status, setStatus] = useState<Status>(initialStatus);
+    const [data, setData] = useState<T | undefined>();
+    const fetcher = useCallback(apiCall, [apiCall]);
 
-  useEffect(() => {
-    setStatus("loading");
+    useEffect(() => {
+        setStatus("loading");
 
-    fetcher()
-      .then((results) => {
-        setData(results.data as T)
-        setStatus("loaded");
-      })
-      .catch((error) => {
-        setError(error);
-      });
+        fetcher()
+            .then((results) => {
+                setData(results.data as T)
+                setStatus("loaded");
+            })
+            .catch((error) => {
+                setError(error);
+            });
 
-  }, [fetcher]);
-  return { error, status, data, setStatus };
+    }, [fetcher]);
+    return { error, status, data, setStatus };
 }

@@ -1,7 +1,7 @@
 import { Box, TextField, Typography } from "@material-ui/core";
 import { Dispatcher, Status } from "../../interfaces";
 
-interface IProps {
+interface Props {
   allDogs: string[];
   setButtonsStatus: Dispatcher<Status>;
   setImagesStatus: Dispatcher<Status>;
@@ -9,21 +9,14 @@ interface IProps {
   setActiveDog: Dispatcher<string>;
 }
 
-/**
- * Dog Header
- * 
- * Header and search input
- * @param props
- * @returns 
- */
-function DogHeader({
+function Header({
   allDogs,
   setButtonsStatus,
   setImagesStatus,
   setFilteredDogs,
   setActiveDog,
-}: IProps) {
-  // when the user types inthe search input field
+}: Props) {
+  // when the user types in the search input field
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // clear the image component
     setImagesStatus("ready");
@@ -68,4 +61,4 @@ function DogHeader({
     </Box>
   );
 }
-export default DogHeader;
+export default Header;
