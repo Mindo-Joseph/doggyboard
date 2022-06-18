@@ -1,8 +1,9 @@
-import { MouseEvent } from "react";
-import { Alert } from "@material-ui/lab";
-import DogButtonsLoaded from "./DogButtonsLoaded";
-import DogButtonsSkeleton from "./ButtonStructure";
-import { Dispatcher, Status } from "../../interfaces";
+/* eslint-disable no-unused-vars */
+import React, { MouseEvent } from 'react';
+import { Alert } from '@material-ui/lab';
+import DogButtonsLoaded from './DogButtonsLoaded';
+import DogButtonsSkeleton from './ButtonStructure';
+import { Dispatcher, Status } from '../../interfaces';
 
 interface Props {
   dogs: string[];
@@ -29,23 +30,23 @@ function DogButtons({
   // Conditional render
   switch (buttonsStatus) {
     // API has responded and filter has dogs
-    case "loaded":
+    case 'loaded':
       return (
         <DogButtonsLoaded
           dogs={dogs}
           activeDog={activeDog}
           handleClick={handleClick}
           setActiveDog={setActiveDog}
-        ></DogButtonsLoaded>
+        />
       );
     // API has responded, but filter matches no dogs
-    case "none":
+    case 'none':
       return (
         <Alert severity="warning">No dogs found! Try another search...</Alert>
       );
     // API is pending, this has to be last to avoid a flicker on initial load
     default:
-      return <DogButtonsSkeleton></DogButtonsSkeleton>;
+      return <DogButtonsSkeleton />;
   }
 }
 

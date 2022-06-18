@@ -1,5 +1,7 @@
-import { Box, TextField, Typography } from "@material-ui/core";
-import { Dispatcher, Status } from "../../interfaces";
+import React from 'react';
+import { Box, TextField, Typography } from '@material-ui/core';
+import { Dispatcher, Status } from '../../interfaces';
+import styles from './css/Header.module.css';
 
 interface Props {
   allDogs: string[];
@@ -19,25 +21,23 @@ function Header({
   // when the user types in the search input field
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // clear the image component
-    setImagesStatus("ready");
+    setImagesStatus('ready');
 
     // clear the active dog
-    setActiveDog("");
+    setActiveDog('');
 
     // capture user input
     const filter = event.target.value.toLowerCase();
 
     // an array of dogs that match the search
-    const filteredList = allDogs.filter((dog) => {
-      return dog.indexOf(filter) !== -1;
-    });
+    const filteredList = allDogs.filter((dog) => dog.indexOf(filter) !== -1);
 
     // if match
     if (filteredList.length) {
-      setButtonsStatus("loaded");
+      setButtonsStatus('loaded');
       // if no match
     } else {
-      setButtonsStatus("none");
+      setButtonsStatus('none');
     }
 
     // set the array, even if empty
@@ -45,10 +45,10 @@ function Header({
   };
 
   return (
-    <Box display="flex" justifyContent="space-between" p={1} m={1}>
+    <Box p={1} m={1} className={styles.box}>
       <Box p={1}>
-        <Typography variant="h3" style={{ color: "#5f67fe" }}>
-          Dogs!
+        <Typography variant="h4" style={{ color: '#19a186' }}>
+          Dog Dashboard
         </Typography>
       </Box>
       <Box p={1} m={1}>

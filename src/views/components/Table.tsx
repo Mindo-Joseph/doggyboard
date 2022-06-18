@@ -1,8 +1,8 @@
-import { MouseEvent, useState } from "react";
-import DogImages from "./DogImages";
-import DogButtons from "./DogButtons";
-import API from "../../infrastructure/services/api/dogs/index";
-import { Dispatcher, Status } from "../../interfaces";
+import React, { MouseEvent, useState } from 'react';
+import DogImages from './DogImages';
+import DogButtons from './DogButtons';
+import API from '../../infrastructure/services/api/dogs/index';
+import { Dispatcher, Status } from '../../interfaces';
 
 interface Props {
   dogs: string[];
@@ -34,18 +34,18 @@ function DogTable({
   // on click
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     // show skeleton images
-    setImagesStatus("loading");
+    setImagesStatus('loading');
 
     // get dog
-    const breed = event.currentTarget.getAttribute("aria-label")!;
+    const breed = event.currentTarget.getAttribute('aria-label')!;
 
     // 8 random images by breed
     API.getImages(breed).then((results) => {
       // array of image src
-      const images = results.data.message;
+      const imagesResult = results.data.message;
 
       // set images
-      setImages(images);
+      setImages(imagesResult);
     });
   };
 
@@ -57,12 +57,12 @@ function DogTable({
         buttonsStatus={buttonsStatus}
         handleClick={handleClick}
         setActiveDog={setActiveDog}
-      ></DogButtons>
+      />
       <DogImages
         images={images}
         imagesStatus={imagesStatus}
         setImagesStatus={setImagesStatus}
-      ></DogImages>
+      />
     </>
   );
 }

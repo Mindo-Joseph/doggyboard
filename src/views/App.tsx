@@ -1,9 +1,10 @@
-import Dashboard from "../views/components/Dashboard";
+import React from 'react';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
     <div className="App">
-      <Dashboard></Dashboard>
+      <Dashboard />
     </div>
   );
 }
