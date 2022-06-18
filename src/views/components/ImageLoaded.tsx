@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { Box, GridList, GridListTile } from '@material-ui/core';
+import { Box, ImageList, ImageListItem } from '@material-ui/core';
+import styles from './css/Imagestyles.module.css';
 
 interface Props {
   images: string[];
@@ -16,13 +17,13 @@ interface Props {
 function ImagesLoaded({ images }: Props) {
   return (
     <Box p={1} style={{ backgroundColor: '#dedede' }}>
-      <GridList cellHeight={160} cols={4}>
+      <ImageList cellHeight={160} cols={4} className={styles.imageContainer}>
         {images.map((src, index) => (
-          <GridListTile key={index}>
+          <ImageListItem key={index} className={styles.imageItem}>
             <img src={src} alt={`dog-${index}`} />
-          </GridListTile>
+          </ImageListItem>
         ))}
-      </GridList>
+      </ImageList>
     </Box>
   );
 }

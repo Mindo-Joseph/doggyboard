@@ -2,7 +2,7 @@
 import React, { MouseEvent } from 'react';
 import { Alert } from '@material-ui/lab';
 import DogButtonsLoaded from './DogButtonsLoaded';
-import DogButtonsSkeleton from './ButtonStructure';
+import ButtonStructure from './ButtonStructure';
 import { Dispatcher, Status } from '../../interfaces';
 
 interface Props {
@@ -46,7 +46,7 @@ function DogButtons({
       );
     // API is pending, this has to be last to avoid a flicker on initial load
     default:
-      return <DogButtonsSkeleton />;
+      return <ButtonStructure />;
   }
 }
 

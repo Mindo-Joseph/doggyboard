@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from "react";
-import { AxiosError, AxiosResponse } from "axios";
-import type { Dispatcher, Status } from "../../interfaces";
+import { useCallback, useEffect, useState } from 'react';
+import { AxiosError, AxiosResponse } from 'axios';
+import type { Dispatcher, Status } from '../../interfaces';
 
 type queryResponse<T> = {
   error?: AxiosError;
@@ -19,27 +19,30 @@ type args<T> = {
  * status, data, and setStatus function
  * @param  - apiCall - the function that will be called to fetch the data.
  */
+// eslint-disable-next-line import/prefer-default-export
 export function useQuery<T>({
-    apiCall,
-    initialStatus = "ready",
+  apiCall,
+  initialStatus = 'ready',
 }: args<T>): queryResponse<T> {
-    const [error, setError] = useState<AxiosError | undefined>();
-    const [status, setStatus] = useState<Status>(initialStatus);
-    const [data, setData] = useState<T | undefined>();
-    const fetcher = useCallback(apiCall, [apiCall]);
+  const [error, setError] = useState<AxiosError | undefined>();
+  const [status, setStatus] = useState<Status>(initialStatus);
+  const [data, setData] = useState<T | undefined>();
+  const fetcher = useCallback(apiCall, [apiCall]);
 
-    useEffect(() => {
-        setStatus("loading");
+  useEffect(() => {
+    setStatus('loading');
 
-        fetcher()
-            .then((results) => {
-                setData(results.data as T)
-                setStatus("loaded");
-            })
-            .catch((error) => {
-                setError(error);
-            });
-
-    }, [fetcher]);
-    return { error, status, data, setStatus };
+    fetcher()
+      .then((results) => {
+        setData(results.data as T);
+        setStatus('loaded');
+      })
+      // eslint-disable-next-line no-shadow
+      .catch((error) => {
+        setError(error);
+      });
+  }, [fetcher]);
+  return {
+    error, status, data, setStatus,
+  };
 }

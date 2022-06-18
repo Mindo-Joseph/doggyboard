@@ -3,6 +3,7 @@ import React, { MouseEvent } from 'react';
 import { ImageList, ImageListItem } from '@material-ui/core';
 import { Dispatcher } from '../../interfaces';
 import DogButtonLoaded from './ButtonLoaded';
+import styles from './css/ButtonStructure.module.css';
 
 interface Props {
   dogs: string[];
@@ -19,6 +20,7 @@ interface Props {
  * @param props
  * @returns
  */
+
 function DogButtonsLoaded({
   dogs,
   activeDog,
@@ -26,9 +28,9 @@ function DogButtonsLoaded({
   handleClick,
 }: Props) {
   return (
-    <ImageList cellHeight={40} cols={4}>
+    <ImageList rowHeight={40} cols={4} className={styles.gridList}>
       {dogs.map((dog, index) => (
-        <ImageListItem key={index}>
+        <ImageListItem key={index} className={styles.gridListItem}>
           <DogButtonLoaded
             dog={dog}
             activeDog={activeDog}

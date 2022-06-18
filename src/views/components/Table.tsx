@@ -20,7 +20,7 @@ interface Props {
  * @param props
  * @returns
  */
-function DogTable({
+function Table({
   dogs,
   activeDog,
   buttonsStatus,
@@ -57,6 +57,7 @@ function DogTable({
         buttonsStatus={buttonsStatus}
         handleClick={handleClick}
         setActiveDog={setActiveDog}
+
       />
       <DogImages
         images={images}
@@ -67,4 +68,4 @@ function DogTable({
   );
 }
 
-export default DogTable;
+export default Table;
