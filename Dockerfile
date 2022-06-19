@@ -1,14 +1,18 @@
-FROM node:14-alpine AS development
-ENV NODE_ENV development
-# Add a work directory
-WORKDIR /app
-# Cache and Install dependencies
-COPY package.json .
-COPY package-lock.json .
+FROM nginx
+
+WORKDIR /usr/share/react
+
+RUN curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
+RUN  apt-get install -y nodejs
+
+COPY package*.json ./
+
 RUN npm install
-# Copy app files
+
 COPY . .
-# Expose port
-EXPOSE 3000
-# Start the app
-CMD [ "npm", "start" ]
+
+RUN npm run build
+
+RUN rm -r /usr/share/nginx/html/*
+
+RUN cp -a  build/. /usr/share/nginx/html
