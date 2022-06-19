@@ -34,6 +34,7 @@ Once you have started the server, visit the browser at `http://127.0.0.1:3000/`
 
 
 ### Live version
+[Live Version](https://dogdashboard.vercel.app/)
 
 ### Screenshots:
 
