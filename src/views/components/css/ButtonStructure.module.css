@@ -1,26 +1,25 @@
 .gridList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
 .gridListItem {
   font-family: 'Poppins', sans-serif;
   border: hidden;
-
 }
 
 .gridListItem:active,
 .gridListItem:focus {
-    opacity: 1;
-    border: 1px solid #FF9900;
-    border-radius: 34px;
+  opacity: 1;
+  border: 1px solid #f90;
+  border-radius: 34px;
+}
 
-}
 @media screen and (min-width: 768px) {
-    .gridList {
-        display: flex;
-        flex-direction: row;
-    }
+  .gridList {
+    display: flex;
+    flex-direction: row;
+  }
 }
-    

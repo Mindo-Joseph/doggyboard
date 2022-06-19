@@ -13,7 +13,7 @@ import styles from './css/ButtonStructure.module.css';
 function ImageStructure() {
   return (
     <Box m={10} p={10}>
-      <ImageList cellHeight={160} cols={4} className={styles.gridList}>
+      <ImageList rowHeight={160} cols={4} className={styles.gridList}>
         {Array(8)
           .fill(null)
           .map((_, index) => (
