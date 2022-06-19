@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Box,
 } from '@material-ui/core';
-import styles from './css/Heading.module.css';
+import styles from './css/main.module.css';
 
 export default function Landingpage() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './css/Heading.module.css';
+import styles from './css/main.module.css';
 
 function Features() {
   return (
