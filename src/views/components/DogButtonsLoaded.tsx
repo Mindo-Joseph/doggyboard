@@ -30,7 +30,7 @@ function DogButtonsLoaded({
   return (
     <ImageList rowHeight={40} cols={4} className={styles.gridList}>
       {dogs.map((dog, index) => (
-        <ImageListItem key={index} className={styles.gridListItem}>
+        <ImageListItem key={index}>
           <DogButtonLoaded
             dog={dog}
             activeDog={activeDog}

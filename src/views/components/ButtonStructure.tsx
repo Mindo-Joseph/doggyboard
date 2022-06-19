@@ -3,7 +3,6 @@ import React from 'react';
 import { ImageList, ImageListItem } from '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
 import styles from './css/ButtonStructure.module.css';
-
 /**
  * Skeleton buttons
  *
@@ -13,16 +12,16 @@ import styles from './css/ButtonStructure.module.css';
 
 function ButtonStructure() {
   return (
-    <ImageList cellHeight={40} cols={4}>
+    <ImageList rowHeight={140} cols={4} className={styles.list}>
       {Array(12)
         .fill(null)
         .map((_, index) => (
-          <ImageListItem key={index} className={styles.gridListItem}>
+          <ImageListItem key={index}>
             <Skeleton
               animation="wave"
               variant="text"
               width="100%"
-              height={70}
+              height={30}
             />
           </ImageListItem>
         ))}

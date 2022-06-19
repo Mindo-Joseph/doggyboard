@@ -2,16 +2,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
     flex-wrap: wrap;
 }
 .gridListItem {
-    
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    border: 1px solid red;
+  font-family: 'Poppins', sans-serif;
+  border: hidden;
+
+}
+
+.gridListItem:active,
+.gridListItem:focus {
+    opacity: 1;
+    border: 1px solid #FF9900;
+    border-radius: 34px;
+
 }
 @media screen and (min-width: 768px) {
     .gridList {

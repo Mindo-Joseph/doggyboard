@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
-
 import { Button } from '@material-ui/core';
 import { Dispatcher } from '../../interfaces';
+import styles from './css/ButtonLoaded.module.css';
 
 interface Props {
   dog: string;
@@ -34,21 +34,9 @@ function DogButtonLoaded({
 
   return (
     <Button
-      fullWidth
-      variant="contained"
       aria-label={dog}
       onClick={handleActiveDog}
-      style={
-        dog === activeDog
-          ? {
-            background: 'linear-gradient(to right, #fb7ba2, #fce043)',
-            color: 'white',
-            textTransform: 'lowercase',
-            borderRadius: '5px',
-
-          }
-          : { textTransform: 'lowercase' }
-      }
+      className={activeDog === dog ? styles.active : styles.inactive}
     >
       {dog}
     </Button>

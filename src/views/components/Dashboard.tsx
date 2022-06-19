@@ -5,6 +5,7 @@ import Header from './Header';
 import API from '../../infrastructure/services/api/dogs/index';
 import { useQuery } from '../../application/hooks/useQuery';
 import { DogsResponse, Status } from '../../interfaces';
+import styles from './css/Dashboard.module.css';
 
 function Dashboard() {
   // state
@@ -32,7 +33,7 @@ function Dashboard() {
   }, [data]);
 
   return (
-    <Container>
+    <Container className={styles.container}>
       <Header
         allDogs={allDogs}
         setButtonsStatus={setButtonsStatus}

@@ -47,8 +47,8 @@ function Header({
   return (
     <Box p={1} m={1} className={styles.box}>
       <Box p={1}>
-        <Typography variant="h4" style={{ color: '#19a186' }}>
-          Dog Dashboard
+        <Typography variant="h4" className={styles.productHeading}>
+          Search or Select a Breed
         </Typography>
       </Box>
       <Box p={1} m={1}>

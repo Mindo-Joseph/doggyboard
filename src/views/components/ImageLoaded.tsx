@@ -16,8 +16,8 @@ interface Props {
  */
 function ImagesLoaded({ images }: Props) {
   return (
-    <Box p={1} style={{ backgroundColor: '#dedede' }}>
-      <ImageList cellHeight={160} cols={4} className={styles.imageContainer}>
+    <Box p={1}>
+      <ImageList rowHeight={260} cols={4} className={styles.imageContainer} gap={30}>
         {images.map((src, index) => (
           <ImageListItem key={index} className={styles.imageItem}>
             <img src={src} alt={`dog-${index}`} />
