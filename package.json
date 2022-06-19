@@ -33,6 +33,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint:css": "npx stylelint '**/*.{css,scss}' --fix ",
     "test": "react-scripts test",
     "test:coverage": "yarn test --coverage",
     "eject": "react-scripts eject",
