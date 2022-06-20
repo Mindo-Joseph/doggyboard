@@ -39,7 +39,6 @@ function DogImages({ images, imagesStatus, setImagesStatus }: Props) {
         }
       })
       .catch((err) => console.log('Failed to load images', err));
-    // dependendcies
   }, [images, setImagesStatus]);
 
   switch (imagesStatus) {

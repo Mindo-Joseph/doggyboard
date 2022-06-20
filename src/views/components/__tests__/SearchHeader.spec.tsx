@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-sequences */
 import * as React from 'react';
-import { getByAltText, render, RenderResult } from '@testing-library/react';
+import { render, RenderResult } from '@testing-library/react';
 import SearchHeader from '../SearchHeader';
 
 let documentBody: RenderResult;
