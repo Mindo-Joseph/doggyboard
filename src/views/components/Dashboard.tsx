@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from '@material-ui/core';
 import Table from './Table';
-import Header from './Header';
+import SearchHeader from './SearchHeader';
 import API from '../../infrastructure/services/api/dogs/index';
 import { useQuery } from '../../application/hooks/useQuery';
 import { DogsResponse, Status } from '../../interfaces';
@@ -34,7 +34,7 @@ function Dashboard() {
 
   return (
     <Container className={styles.container}>
-      <Header
+      <SearchHeader
         allDogs={allDogs}
         setButtonsStatus={setButtonsStatus}
         setImagesStatus={setImagesStatus}

@@ -1,8 +1,11 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
-    "@exmpl/(.*)": "<rootDir>/src/$1"
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
+  setupFilesAfterEnv: [
+    '<rootDir>/src/setupTests.ts',
+  ],
 };

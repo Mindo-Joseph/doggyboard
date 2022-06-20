@@ -13,7 +13,7 @@ function Features() {
       <div className={styles.moreFeaturesContent}>
         <div className={styles.feature}>
           <div className={styles.featureIllustration}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="Feature Illustration Icon" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="search-icon" />
           </div>
           <div className={styles.featureDetails}>
             <h3>Search</h3>
@@ -24,7 +24,7 @@ function Features() {
         </div>
         <div className={styles.feature}>
           <div className={styles.featureIllustration}>
-            <img src="https://image.similarpng.com/very-thumbnail/2021/06/Design-of-click-icon-with-hand-cursor.-Hand-is-pushing-the-button.png" alt="Feature Illustration Icon" />
+            <img src="https://image.similarpng.com/very-thumbnail/2021/06/Design-of-click-icon-with-hand-cursor.-Hand-is-pushing-the-button.png" alt="click-icon" />
           </div>
           <div className={styles.featureDetails}>
             <h3>Choose a breed</h3>
@@ -36,7 +36,7 @@ function Features() {
         </div>
         <div className={styles.feature}>
           <div className={styles.featureIllustration}>
-            <img src="https://previews.123rf.com/images/fokaspokas/fokaspokas1803/fokaspokas180300333/96943471-simple-eye-icon-white-icon-with-shadow-on-transparent-background-.jpg" alt="Feature Illustration Icon" />
+            <img src="https://previews.123rf.com/images/fokaspokas/fokaspokas1803/fokaspokas180300333/96943471-simple-eye-icon-white-icon-with-shadow-on-transparent-background-.jpg" alt="view-icon" />
           </div>
           <div className={styles.featureDetails}>
             <h3>View Images</h3>

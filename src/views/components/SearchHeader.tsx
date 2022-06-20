@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, TextField, Typography } from '@material-ui/core';
 import { Dispatcher, Status } from '../../interfaces';
-import styles from './css/Header.module.css';
+import styles from './css/SearchHeader.module.css';
 
 interface Props {
   allDogs: string[];
@@ -11,7 +11,7 @@ interface Props {
   setActiveDog: Dispatcher<string>;
 }
 
-function Header({
+function SearchHeader({
   allDogs,
   setButtonsStatus,
   setImagesStatus,
@@ -61,4 +61,4 @@ function Header({
     </Box>
   );
 }
-export default Header;
+export default SearchHeader;
